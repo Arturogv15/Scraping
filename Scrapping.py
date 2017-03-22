@@ -18,26 +18,12 @@ items = soup.find_all('div', class_="item-list")
 print(items[0].h3.string)
 print(items[0].ul.li.a.string)
 
-items2=[]
-for n in items:
-	items_puesto=soup.find("div", class_="puesto-directorio").findAll()
-	for i in items_puesto:
-		puesto = i.next_sibling
-	print(puesto)
-
-#items2[n].append(puesto)
+items_puesto=soup.find("div", class_="puesto-directorio").findAll()
+for i in items_puesto:
+	puesto = i.next_sibling
+print(puesto)
 
 
-#for n in range(10):
-#	for i in soup.find("div", class_="puesto-directorio").findAll():
-#		puesto = i.nextSibling
-#	items_puesto[n] = ''.join(puesto)
-#		#items_puesto[n]=puesto
-
-#print(items2[0])
-
-
-#print(items_puesto)
 for i in soup.find("div", class_="direccion-directorio").findAll():
 	direccion = i.nextSibling
 print(direccion)
