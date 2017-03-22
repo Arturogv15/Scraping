@@ -39,12 +39,7 @@ print("")
 #print(itemsDireccion[0].div.text)
 #itemsTelefono = soup.find_all('div', class_="views-field-field-conmutador")
 #print(itemsTelefono[0].div.text)
-#itemsCorreo = soup.find_all('span', id_="6a1ccbef6ebe9d6e42f41b7f2bb6a80302c2d804")
-#itemsCorreo = soup.find_all('div', class_="views-field-field-correo-electronico")
-#print(itemsCorreo[0].text) 
 
-#one = soup.find_all("span", {"id": "6a1ccbef6ebe9d6e42f41b7f2bb6a80302c2d804"})
-#print(one[0].text) 
 
 
 
