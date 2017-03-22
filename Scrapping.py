@@ -5,10 +5,8 @@ cucei = "http://cucei.udg.mx/directorio"
 #cucei="file:///C:/Users/Arturo/Desktop/Directorio.html"
 
 page = urllib.request.urlopen(cucei)
-
 soup = BeautifulSoup(page)
 
-#soup.title.string 
 
 def cutit(s,n):    
    return s[n:]
@@ -23,7 +21,6 @@ for i in items_puesto:
 	puesto = i.next_sibling
 print(puesto)
 
-
 for i in soup.find("div", class_="direccion-directorio").findAll():
 	direccion = i.nextSibling
 print(direccion)
@@ -32,10 +29,6 @@ for i in soup.find("div", class_="views-field-field-conmutador").findAll():
 	conmutador = i.nextSibling
 print(conmutador)
 
-
-#for i in soup.find('div', class_="views-field-field-correo-electronico").findAll():
-#	correo = i.nextSibling
-#print(correo)
 
 print("")
 print("")
