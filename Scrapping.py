@@ -30,9 +30,18 @@ for i in listaConmutador:
 	if i.strong != None:
 		conmutador.append(i.strong.nextSibling)
 
+imagenes = []
+listaImagenes = soup.find_all(class_="foto-directorio")
+for i in listaImagenes:
+	if i.img.src != None:
+		imagenes.append(i.img.src.string)
+
+print(imagenes[1])
 
 
 
+print("")
+print("")
 
 
 items_puesto=soup.find("div", class_="puesto-directorio").findAll()
