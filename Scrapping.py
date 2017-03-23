@@ -8,13 +8,32 @@ page = urllib.request.urlopen(cucei)
 soup = BeautifulSoup(page)
 
 
-def cutit(s,n):    
-   return s[n:]
-
-
 items = soup.find_all('div', class_="item-list") 
 print(items[0].h3.string)
 print(items[0].ul.li.a.string)
+
+puesto =[] 
+listaPuestos = soup.find_all(class_="puesto-directorio")
+for i in listaPuestos:
+    if i.strong != None:
+        puesto.append(i.strong.nextSibling)
+
+direccion = []
+listaDireccion = soup.find_all(class_="direccion-directorio")
+for i in listaDireccion:
+	if i.strong != None:
+		direccion.append(i.strong.nextSibling)
+
+conmutador = []
+listaConmutador = soup.find_all(class_="views-field-field-conmutador")
+for i in listaConmutador:
+	if i.strong != None:
+		conmutador.append(i.strong.nextSibling)
+
+
+
+
+
 
 items_puesto=soup.find("div", class_="puesto-directorio").findAll()
 for i in items_puesto:
@@ -29,9 +48,6 @@ for i in soup.find("div", class_="views-field-field-conmutador").findAll():
 	conmutador = i.nextSibling
 print(conmutador)
 
-
-print("")
-print("")
 
 #itemsPuesto = soup.find_all('div', class_="puesto-directorio")
 #print(itemsPuesto[1].nextSibling)  
